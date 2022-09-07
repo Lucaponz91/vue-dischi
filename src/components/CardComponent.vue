@@ -1,8 +1,8 @@
 <template>
-  <div>
-  <b-card
+  <div >
+  <b-card v-for="(discs, index) in listDiscs" :key="index"
     title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
+    :img-src=discs.poster
     img-alt="Image"
     img-top
     tag="article"
@@ -15,19 +15,33 @@
 
     
   </b-card>
+  <!-- {{listDiscs}} -->
 </div>
+
 </template>
 
 <script>
     import axios from 'axios'
 export default {
+    data(){
+        return {
+            listDiscs: [],
+        }
+    },
     created(){
         axios
             .get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((res) =>{
-                console.log(res.data)
-            }
-            )
+                console.log(res.data);
+                this.listDiscs = res.data.response;
+            })
+            .catch((err)=>{
+                console.log("Errore!", err);
+            })
+            .finally(()=>{
+                console.log("finito")
+            })
+            
     }
 
 }
