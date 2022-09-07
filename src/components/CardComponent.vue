@@ -1,51 +1,61 @@
 <template>
   <div >
-  <b-card v-for="(discs, index) in listDiscs" :key="index"
-    :title=discs.title
-    :img-src=discs.poster
+  <!-- <b-card 
+    :title="title"
+    :img-src="imgUrl"
     img-alt="Image"
     img-top
     tag="article"
     style="max-width: 20rem;"
-    class="mb-2"
+    class="mb-2 card"
   >
-    <h5>{{discs.author}}</h5>
-    <h5>{{discs.year}}</h5>
+    <h5>{{author}}</h5>
+    <h5>{{year}}</h5>
 
     
-  </b-card>
-  <!-- {{listDiscs}} -->
+  </b-card> -->
+  <div class="card " style="width: 18rem;">
+  <img class="card-img-top" :src="imgUrl" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <h5>{{author}}</h5>
+    <h5>{{year}}</h5>
+  </div>
 </div>
+</div>
+
 
 </template>
 
 <script>
-    import axios from 'axios'
 export default {
-    data(){
-        return {
-            listDiscs: [],
-        }
+    props: {
+        title: String,
+        author: String,
+        year: String,
+        imgUrl: String
     },
-    created(){
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/array/music')
-            .then((res) =>{
-                console.log(res.data);
-                this.listDiscs = res.data.response;
-            })
-            .catch((err)=>{
-                console.log("Errore!", err);
-            })
-            .finally(()=>{
-                console.log("finito")
-            })
-            
-    }
+    
 
 }
 </script>
 
 <style lang="scss" scoped>
+    .card{
+        background-color: #2E3A46;
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        .card-title{
+            color: white;
+        }
+        h5{
+            color: lightgray;
+        }
+        img{
+            height: 160px;
+            width: 160px;
+        }
+    }
 
 </style>
