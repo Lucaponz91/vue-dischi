@@ -1,7 +1,7 @@
 <template>
   <div >
   <b-card v-for="(discs, index) in listDiscs" :key="index"
-    title="Card Title"
+    :title=discs.title
     :img-src=discs.poster
     img-alt="Image"
     img-top
@@ -9,9 +9,8 @@
     style="max-width: 20rem;"
     class="mb-2"
   >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
+    <h5>{{discs.author}}</h5>
+    <h5>{{discs.year}}</h5>
 
     
   </b-card>
