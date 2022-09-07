@@ -44,8 +44,10 @@ export default {
     .card{
         background-color: #2E3A46;
         max-width: 200px;
+        height: 300px;
         display: flex;
         align-items: center;
+        margin-bottom: 10px;
         .card-title{
             color: white;
         }

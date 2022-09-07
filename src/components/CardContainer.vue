@@ -44,6 +44,7 @@ export default {
         background-color: #1E2D3B;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        padding: 20px;
 
     }
 
