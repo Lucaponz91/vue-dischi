@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <HeaderComponent/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <CardContainer/>
   </div>
@@ -8,12 +9,14 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import CardContainer from './components/CardContainer.vue';
+import HeaderComponent from './components/HeaderComponent.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     CardContainer,
+    HeaderComponent
 }
 }
 </script>
