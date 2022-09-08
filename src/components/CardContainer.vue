@@ -14,11 +14,17 @@ import CardComponent from './CardComponent.vue';
 import axios from 'axios' ;
 export default {
     components: { CardComponent, },
-    data(){
+    props: {
+        selectedGenre:  {
+            type: String,
+            default: ''
+        }
+    },
+    data(){ 
         return {
             listDiscs: [],
             listGenres: [],
-            selected_genre: ''
+            
         }
     },
     created(){
@@ -41,7 +47,7 @@ export default {
         return this.listDiscs.filter((el) => {
           const genre = el.genre;
           console.log(genre)
-          const find = this.selected_genre
+          const find = this.selectedGenre
           if (genre.includes(find)){
             return true
           }

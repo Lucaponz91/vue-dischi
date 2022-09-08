@@ -4,14 +4,14 @@
         <img src="../assets/spotify_logo_icon_186877.png" alt="">
     </div>
     <div>
-            <select class="form-select"  v-model="selected_genre">
+            <select class="form-select"  v-model="selectedGenre" @change="$emit('selectedGenre', selectedGenre)">
                 <option value="">Seleziona un genere</option>
                 <option value="Rock">Rock</option>
                 <option value="Pop">Pop</option>
                 <option value="Jazz">Jazz</option>
                 <option value="Metal">Metal</option>
             </select>
-            {{selected_genre}}
+            {{selectedGenre}}
         </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 export default {
     data(){
         return{
-            selected_genre: ''
+            selectedGenre: ''
         }
 
     }

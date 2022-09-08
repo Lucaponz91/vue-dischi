@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <HeaderComponent/>
+    <HeaderComponent @selectedGenre="onSelect" />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <CardContainer/>
+    <CardContainer :selectedGenre="genreProp" />
   </div>
 </template>
 
@@ -13,11 +13,23 @@ import HeaderComponent from './components/HeaderComponent.vue'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      genreProp: ''
+    }
+  },
   components: {
     // HelloWorld,
     CardContainer,
     HeaderComponent
-}
+  },
+  methods: {
+    onSelect(data) {
+      console.log("ascolto l'evento", data)
+      this.genreProp = data
+    }
+  }
+
 }
 </script>
 
