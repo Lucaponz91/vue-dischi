@@ -4,16 +4,23 @@
         <img src="../assets/spotify_logo_icon_186877.png" alt="">
     </div>
     <div>
-            <select class="form-select"  >
+            <select class="form-select"  v-model="selected_genre">
                 <option value="">Seleziona un genere</option>
                 <option>1</option>
             </select>
+            {{selected_genre}}
         </div>
   </div>
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+            selected_genre: ''
+        }
+
+    }
 
 }
 </script>
