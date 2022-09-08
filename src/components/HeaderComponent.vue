@@ -6,7 +6,10 @@
     <div>
             <select class="form-select"  v-model="selected_genre">
                 <option value="">Seleziona un genere</option>
-                <option>1</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Metal">Metal</option>
             </select>
             {{selected_genre}}
         </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="card_container">
-        <CardComponent v-for="(disc, index) in listDiscs" :key="index"
+        <CardComponent v-for="(disc, index) in filteredByGenre" :key="index"
         :imgUrl = "disc.poster"
         :author = "disc.author"
         :year = "disc.year"
@@ -17,6 +17,8 @@ export default {
     data(){
         return {
             listDiscs: [],
+            listGenres: [],
+            selected_genre: ''
         }
     },
     created(){
@@ -25,6 +27,7 @@ export default {
             .then((res) =>{
                 console.log(res.data);
                 this.listDiscs = res.data.response;
+                
             })
             .catch((err)=>{
                 console.log("Errore!", err);
@@ -32,8 +35,21 @@ export default {
             .finally(()=>{
                 console.log("finito")
             })
-
-}}
+    },
+    computed:{
+        filteredByGenre() {
+        return this.listDiscs.filter((el) => {
+          const genre = el.genre;
+          console.log(genre)
+          const find = this.selected_genre
+          if (genre.includes(find)){
+            return true
+          }
+          return false
+        });
+      }
+    }
+    }
 </script>
 
 
