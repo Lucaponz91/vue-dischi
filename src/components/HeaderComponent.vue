@@ -11,7 +11,7 @@
                 <option value="Jazz">Jazz</option>
                 <option value="Metal">Metal</option>
             </select>
-            {{selectedGenre}}
+            
         </div>
   </div>
 </template>
@@ -36,9 +36,7 @@ export default {
         justify-content: space-between;
         height: 70px;
         background-color: #2E3A46;
-        div{
-            // text-align: left;
-        }
+        
         img{
             width: 70px;
             aspect-ratio: 1;
