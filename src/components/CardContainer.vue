@@ -47,7 +47,9 @@ export default {
         return this.listDiscs.filter((el) => {
           const genre = el.genre;
           console.log(genre)
-          const find = this.selectedGenre
+          const find = this.selectedGenre;
+          const author = el.author;
+          const findAuthor = this.selectedAuthor;
           if (genre.includes(find)){
             return true
           }
