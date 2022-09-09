@@ -50,7 +50,7 @@ export default {
           const find = this.selectedGenre;
           const author = el.author;
           const findAuthor = this.selectedAuthor;
-          if (genre.includes(find)){
+          if (genre.includes(find) || author.includes(findAuthor)){
             return true
           }
           return false
