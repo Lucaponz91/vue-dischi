@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent @selectedGenre="onSelect" />
+    <HeaderComponent @genreChangeFtn="getGenre" @authorChangeFtn="getAuthor"/>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <CardContainer :selectedGenre="genreProp" />
   </div>
@@ -15,7 +15,8 @@ export default {
   name: 'App',
   data(){
     return {
-      genreProp: ''
+      genreProp: '',
+      authorProp: ''
     }
   },
   components: {
@@ -24,7 +25,7 @@ export default {
     HeaderComponent
   },
   methods: {
-    onSelect(data) {
+    getGenre(data) {
       console.log("ascolto l'evento", data)
       this.genreProp = data
     }

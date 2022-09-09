@@ -7,7 +7,7 @@
       <select
         class="form-select"
         v-model="selectedGenre"
-        @change="$emit('selectedGenre', selectedGenre)"
+        @change="$emit('genreChangeFtn', selectedGenre)"
       >
         <option value="">Seleziona un genere</option>
         <option value="Rock">Rock</option>
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       selectedGenre: "",
+      selectedAuthor: ""
     };
   },
 };

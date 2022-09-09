@@ -1,6 +1,6 @@
 <template>
     <div class="card_container">
-        <CardComponent v-for="(disc, index) in filteredByGenre" :key="index"
+        <CardComponent v-for="(disc, index) in filteredDiscs" :key="index"
         :imgUrl = "disc.poster"
         :author = "disc.author"
         :year = "disc.year"
@@ -43,7 +43,7 @@ export default {
             })
     },
     computed:{
-        filteredByGenre() {
+        filteredDiscs() {
         return this.listDiscs.filter((el) => {
           const genre = el.genre;
           console.log(genre)
