@@ -18,6 +18,10 @@ export default {
         selectedGenre:  {
             type: String,
             default: ''
+        },
+        selectedAuthor:{
+            type: String,
+            default: ''
         }
     },
     data(){ 
@@ -48,9 +52,10 @@ export default {
           const genre = el.genre;
           console.log(genre)
           const find = this.selectedGenre;
-          const author = el.author;
-          const findAuthor = this.selectedAuthor;
-          if (genre.includes(find) || author.includes(findAuthor)){
+          const author = el.author.toLowerCase();
+          console.log(author)
+          const findAuthor = this.selectedAuthor.toLowerCase();
+          if (genre.includes(find) && author.includes(findAuthor)){
             return true
           }
           return false
